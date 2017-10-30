@@ -7,6 +7,8 @@ export const PATTERN : Pattern = {
             [0,0,0,0,0,0],
             [0,0,0,0,0,0],
             [0,0,0,0,0,0]],
-    length: 5,
-    width: 5
+    height: 5,
+    width: 5,
+    minSize: 2,
+    maxSize: 10,
 }

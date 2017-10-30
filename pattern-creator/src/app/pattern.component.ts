@@ -6,6 +6,13 @@ import { Pattern } from './pattern';
 @Component({
   selector: 'pattern-component',
   template: `<h1>Pattern</h1>
+            <div class="size">
+                <div class="height">
+                    <button (click)="decrease(pattern.height)">-</button>
+                    <p>{{pattern.height}}</p>
+                    <button (click)="increase(pattern.height)">+</button>
+                </div>
+            </div>
             <ul class="pattern" (mouseup)="mUp()"  (mouseleave)="mUp()" >
                 <li class="row" *ngFor = "let row of pattern.cells,let i=index">
                     <ul>
@@ -26,8 +33,8 @@ import { Pattern } from './pattern';
 
 export class PatternComponent {
     pattern: Pattern;
-    mouseState = false;
     cellColor:number;
+    mouseState = false;
     lastChangedIndex = {i:-1,
                         j:-1};
 
@@ -65,5 +72,18 @@ export class PatternComponent {
         this.lastChangedIndex = {i:-1,j:-1};
         console.log("up");
     };
+
+    increase(param){
+        if (param < this.pattern.maxSize){
+            param++;
+        }
+    }
+
+    decrease(param){
+        if (param > this.pattern.minSize){
+            param--;
+        }
+        console.log(param);
+    }
     
 }
