@@ -39,17 +39,29 @@ export class PatternComponent {
 
     getInitialPattern():void{        
         this.pattern = PATTERN;
-        console.log(this.pattern);        
+        this.initCells();    
+    }
+
+    initCells(){
+        let arr = new Array;        
+        for (let i = 0, height = this.pattern.height; i < height; i++){
+            let row = [];
+            for (let j = 0, width = this.pattern.width; j < width; j ++){
+                row.push({color:0});                
+            }
+            arr.push(row);
+        }    
+        this.pattern.cells = arr;    
     }
 
     ngOnInit(): void {        
         this.getInitialPattern();
     }
 
-    change(cell , event){
+    change(cell , event){        
         if (this.mouseState ){        
             if (!(cell === this.lastChangedCell)){
-                cell = this.cellColor;                
+                cell.color = this.cellColor;                
                 this.lastChangedCell = cell;  
             }
         }
@@ -58,9 +70,9 @@ export class PatternComponent {
     mDown(event, cell){
         event.preventDefault();
         this.mouseState = true;
-        if (cell === 0){
+        if (cell.color === 0){
             this.cellColor = 1;
-        } else if (cell === 1){
+        } else if (cell.color === 1){
             this.cellColor = 0;
         };    
         this.change(cell, event);        
@@ -69,7 +81,7 @@ export class PatternComponent {
     mUp(){
         this.mouseState = false;        
         this.lastChangedCell = undefined;
-        //console.log("up");
+        console.log(this.pattern.cells);
     };
 
     increase(pattern, param){
@@ -84,4 +96,19 @@ export class PatternComponent {
         }
     }
     
+}
+
+function initCells(width, height){
+    let arr = new Array;
+
+    for (let i = 0; i < height; i++){
+        let row = [];
+        for (let j = 0; j < width; j ++){
+            row.push({color:0});
+            console.log(row);
+        }
+        arr.push(row);
+    }
+    console.log(arr);
+    return arr;
 }
