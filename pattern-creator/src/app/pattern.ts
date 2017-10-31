@@ -5,8 +5,12 @@ export class Pattern {
     width: number;
     minSize: number;
     maxSize: number;
-    cells: number[][];
+    cells: Cell[][];
     //mainColor: string;
     //backgroungColor: string;
 
+}
+
+export class Cell {
+    color: number;
 }
