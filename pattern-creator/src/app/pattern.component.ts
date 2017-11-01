@@ -8,9 +8,16 @@ import { Pattern } from './pattern';
   template: `<h1>Pattern</h1>
             <div class="size">
                 <div class="height">
+                    <label> Height </label> 
                     <button (click)="decrease(pattern, 'height')">-</button>
                     <p>{{pattern.height}}</p>
                     <button (click)="increase(pattern, 'height')">+</button>
+                </div>
+                <div class="width">
+                    <label> Width </label> 
+                    <button (click)="decrease(pattern, 'width')">-</button>
+                    <p>{{pattern.width}}</p>
+                    <button (click)="increase(pattern, 'width')">+</button>
                 </div>
             </div>
             <ul class="pattern" (mouseup)="mUp()"  (mouseleave)="mUp()" >
@@ -80,20 +87,31 @@ export class PatternComponent {
 
     mUp(){
         this.mouseState = false;        
-        this.lastChangedCell = undefined;
-        console.log(this.pattern.cells);
+        this.lastChangedCell = undefined;        
     };
 
     increase(pattern, param){
-        if (pattern.height < pattern.maxSize){
-            pattern.height++;
-        }        
+        if (param === "height"){
+            if (pattern.height < pattern.maxSize){
+                pattern.height++;
+            }   
+        } else if (param === "width"){
+             if (pattern.width < pattern.maxSize){
+                pattern.width++;
+            }  
+        }     
     }
 
     decrease(pattern,param){
-        if (pattern.height > pattern.minSize){
-            pattern.height--;
-        }
+        if (param === "height"){
+            if (pattern.height > pattern.minSize){
+                pattern.height--;
+            }
+        } else if (param === "width"){
+             if (pattern.width > pattern.minSize){
+                pattern.width--;
+            }  
+        }  
     }
     
 }
