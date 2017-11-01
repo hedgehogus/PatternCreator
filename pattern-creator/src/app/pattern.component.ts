@@ -5,37 +5,8 @@ import { Pattern } from './pattern';
 
 @Component({
   selector: 'pattern-component',
-  template: `<h1>Pattern</h1>
-            <div class="size">
-                <div class="height">
-                    <label> Height </label> 
-                    <button (click)="decrease(pattern, 'height')">-</button>
-                    <p>{{pattern.height}}</p>
-                    <button (click)="increase(pattern, 'height')">+</button>
-                </div>
-                <div class="width">
-                    <label> Width </label> 
-                    <button (click)="decrease(pattern, 'width')">-</button>
-                    <p>{{pattern.width}}</p>
-                    <button (click)="increase(pattern, 'width')">+</button>
-                </div>
-            </div>
-            <ul class="pattern" (mouseup)="mUp()"  (mouseleave)="mUp()" >
-                <li class="row" *ngFor = "let row of pattern.cells">
-                    <ul>
-                        <li *ngFor = "let cell of row" >   
-                            <div   
-                                (mousedown)="mDown($event, cell, i, j)"                                                            
-                                (mousemove)="change(cell , $event)" 
-                                class="cell" 
-                                [class.default]="cell.color === 0" 
-                                [class.selected]="cell.color === 1">  </div>           
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-            `  ,
-    styleUrls: ['./pattern.component.css']
+  templateUrl: './pattern.component.html' ,
+  styleUrls: ['./pattern.component.css']
 })
 
 export class PatternComponent {
