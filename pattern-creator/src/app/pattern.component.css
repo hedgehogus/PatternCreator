@@ -19,12 +19,19 @@ ul {
     height: 40px;
 }
 
-
-
 .default {
     background: lightcoral;
 }
 
 .selected {
     background: yellow;
+}
+
+.size button {
+    display: inline-block;
+}
+
+.size div {
+    display: inline-block;
+    margin: 40px;
 }
