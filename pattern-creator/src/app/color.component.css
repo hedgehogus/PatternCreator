@@ -1,0 +1,11 @@
+.displayColor {
+    height: 70px;
+    width: 90px;
+    background: #09dd77;
+    margin: 25px;
+}
+
+input[type="range"]{
+    display: block;
+    width: 200px;
+}
