@@ -4,7 +4,8 @@ import { PatternComponent } from './pattern.component'
 @Component({
   selector: 'app-root',
   template: `
-   <h1>{{title}}</h1>    
+   <h1>{{title}}</h1>
+   <color-component></color-component>    
    <pattern-component></pattern-component>
   `,
   styleUrls: ['./app.component.css']
