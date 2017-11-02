@@ -13,7 +13,7 @@
             <button (click)="increase(pattern, 'width')">+</button>
         </div>
     </div>
-    <ul class="pattern" (mouseup)="mUp()"  (mouseleave)="mUp()" >
+    <ul class="pattern" (mouseup)="mUp()" >
         <li class="row" *ngFor = "let row of pattern.cells">
             <ul>
                 <li *ngFor = "let cell of row" >   
