@@ -70,7 +70,8 @@ export class PatternComponent {
              if (pattern.width < pattern.maxSize){
                 pattern.width++;
             }  
-        }     
+        }   
+        resizePattern(pattern);  
     }
 
     decrease(pattern,param){
@@ -83,8 +84,8 @@ export class PatternComponent {
                 pattern.width--;
             }  
         }  
+        resizePattern(pattern);
     }
-    
 }
 
 function initCells(width, height){
@@ -100,4 +101,34 @@ function initCells(width, height){
     }
     console.log(arr);
     return arr;
+}
+
+function resizePattern(pattern){
+    if(pattern.height > pattern.cells.length){
+        for(let i = pattern.cells.length; i < pattern.height; i++){
+            let row = [];
+            for(let j = 0; j < pattern.cells[0].length; j++){
+                row.push({color:0});
+            }
+            pattern.cells.push(row);
+        }
+    } else  if (pattern.height < pattern.cells.length){
+        for(let i = pattern.cells.length; i > pattern.height; i--){
+            pattern.cells.pop();
+        }
+    }
+    if (pattern.width > pattern.cells[0].length){
+        for( let i = 0; i < pattern.cells.length; i ++) {
+            for(let j = pattern.cells[i].length; j < pattern.width; j ++){
+                pattern.cells[i].push({color:0});
+            }
+        }
+    } else if (pattern.width < pattern.cells[0].length) {
+        for( let i = 0; i < pattern.cells.length; i ++) {
+            for(let j = pattern.cells[i].length; j > pattern.width; j --){
+                pattern.cells[i].pop();
+            }
+        }
+    }
+
 }

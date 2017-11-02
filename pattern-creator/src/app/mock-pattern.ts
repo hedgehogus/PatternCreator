@@ -6,7 +6,7 @@ export const PATTERN : Pattern = {
     width: 5,
     cells: [],
     minSize: 2,
-    maxSize: 10,
+    maxSize: 15,
 }
 
 function initCells(width, height){
