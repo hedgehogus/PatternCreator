@@ -1,13 +1,9 @@
-export class Pattern {
-   // id: number;
-   // name: string;
+export class Pattern {   
     height: number;
     width: number;
     minSize: number;
     maxSize: number;
     cells: Cell[][];
-    //mainColor: string;
-    //backgroungColor: string;
 
 }
 
