@@ -29,10 +29,14 @@ export class ColorComponent {
             case 1:
                 color = this.mainColor;
         }        
-        return '#' + color.r.toString(16) + color.g.toString(16) + color.b.toString(16);
+        return convertColor(color);
     }
 
     changeBackground(): any {
         return { 'background-color': this.getCurrent() };
     }
+}
+
+export function convertColor (color: Color){
+    return '#' + color.r.toString(16) + color.g.toString(16) + color.b.toString(16);
 }

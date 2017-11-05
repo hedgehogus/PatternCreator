@@ -5,8 +5,7 @@ import { PatternComponent } from './pattern.component'
   selector: 'app-root',
   template: `
    <h1>{{title}}</h1>
-   <color-component></color-component>    
-   <pattern-component></pattern-component>
+   <color-component></color-component>   
   `,
   styleUrls: ['./app.component.css']
 })

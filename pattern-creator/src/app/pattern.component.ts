@@ -2,6 +2,9 @@ import { Component, Input } from '@angular/core';
 import { PATTERN } from './mock-pattern';
 import { Pattern } from './pattern';
 
+import { Color } from './color';
+import { convertColor } from "./color.component"
+
 @Component({
   selector: 'pattern-component',
   templateUrl: './pattern.component.html' ,
@@ -11,12 +14,15 @@ import { Pattern } from './pattern';
 export class PatternComponent {
     pattern: Pattern;
     cellColor:number;
+    @Input() mainColor:Color;
     mouseState = false;
     lastChangedCell = undefined;
+    convertColor;
 
     getInitialPattern():void{        
         this.pattern = PATTERN;
-        this.initCells();    
+        this.initCells();
+        this.convertColor = convertColor;    
     }
 
     initCells(){
@@ -131,3 +137,4 @@ function resizePattern(pattern){
     }
 
 }
+
