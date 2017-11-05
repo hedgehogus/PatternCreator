@@ -5,32 +5,7 @@ import { Color } from './color';
 
 @Component({
   selector: 'color-component',
-  template: `<h1>color component</h1> 
-            <div class="main-back">
-            <div class="radio">
-                <input type="radio" id="main" name="mainorback" [value]="0" [(ngModel)]="radio.value">  
-                <label for="main">main color<label>              
-                <input type="radio" id="back" name="mainorback" [value]="1" [(ngModel)]="radio.value">
-                <label for="back">background color<label>                
-            <div> 
-            <div class="displayColor" [ngStyle]="changeBackground()" > </div>            
-            <div class="mainpicker" *ngIf="radio.value === 0">                  
-                <input type="range" name="r" min="0" max ="254"
-                    [(ngModel)]="backColor.r">
-                <input type="range" name="g" min="0" max ="254"
-                    [(ngModel)]="backColor.g">
-                <input type="range" name="b" min="0" max ="254"
-                    [(ngModel)]="backColor.b">
-            </div>
-            <div class="backpicker" *ngIf="radio.value === 1">       
-                <input type="range" name="r" min="0" max ="254"
-                    [(ngModel)]="mainColor.r">
-                <input type="range" name="g" min="0" max ="254"
-                    [(ngModel)]="mainColor.g">
-                <input type="range" name="b" min="0" max ="254"
-                    [(ngModel)]="mainColor.b">
-            </div>` 
-            ,
+  templateUrl: './color.component.html' ,
   styleUrls: ['./color.component.css']
 })
 

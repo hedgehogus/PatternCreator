@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { PATTERN } from './mock-pattern';
 import { Pattern } from './pattern';
-
 
 @Component({
   selector: 'pattern-component',
