@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Color } from './color';
 //import { NgStyle } from '@angular/common';
 
@@ -10,14 +10,11 @@ import { Color } from './color';
 })
 
 export class ColorComponent {
-    backColor: Color;
-    mainColor: Color;
+    @Input() backColor:Color;
+    @Input() mainColor:Color;
     radio = {value:1};
-    
-    
-    ngOnInit(): void {        
-        this.backColor = {r:100,g:66,b:77};   
-        this.mainColor = {r:250,g:66,b:77};     
+        
+    ngOnInit(): void {     
     }
 
     getCurrent(){

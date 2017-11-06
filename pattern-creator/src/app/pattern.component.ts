@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { PATTERN } from './mock-pattern';
 import { Pattern } from './pattern';
 
@@ -14,8 +14,8 @@ import { convertColor } from "./color.component"
 export class PatternComponent {
     pattern: Pattern;
     cellColor:number;
-    @Input() backColor:Color;
-    @Input() mainColor:Color;
+    backColor:Color;
+    mainColor:Color;
     mouseState = false;
     lastChangedCell = undefined;
     convertColor;
@@ -23,7 +23,9 @@ export class PatternComponent {
     getInitialPattern():void{        
         this.pattern = PATTERN;
         this.initCells();
-        this.convertColor = convertColor;    
+        this.convertColor = convertColor; 
+        this.backColor = {r:120,g:50,b:100};   
+        this.mainColor = {r:170,g:100,b:150};    
     }
 
     initCells(){
