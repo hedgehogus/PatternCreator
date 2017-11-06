@@ -14,6 +14,7 @@ import { convertColor } from "./color.component"
 export class PatternComponent {
     pattern: Pattern;
     cellColor:number;
+    @Input() backColor:Color;
     @Input() mainColor:Color;
     mouseState = false;
     lastChangedCell = undefined;

@@ -12,7 +12,7 @@ import { Color } from './color';
 export class ColorComponent {
     backColor: Color;
     mainColor: Color;
-    radio = {value:0};
+    radio = {value:1};
     
     
     ngOnInit(): void {        
