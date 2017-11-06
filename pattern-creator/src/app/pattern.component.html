@@ -22,8 +22,8 @@
                         (mousedown)="mDown($event, cell, i, j)"                                                            
                         (mousemove)="change(cell , $event)" 
                         class="cell" 
-                        [class.default]="cell.color === 0" 
-                        [class.selected]="cell.color === 1">  
+                        [ngStyle]="getStyle(cell.color)"                        
+                        >  
                     </div>           
                 </li>
             </ul>

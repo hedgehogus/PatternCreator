@@ -92,6 +92,22 @@ export class PatternComponent {
         }  
         resizePattern(pattern);
     }
+
+    getStyle(mainOrBack){
+        if (mainOrBack === 1) {
+            return this.getMainColor();
+        } else if (mainOrBack === 0){
+            return this.getBackColor()
+        }
+    }
+
+    getMainColor(): any {
+        return { 'background-color': this.convertColor(this.mainColor) };
+    }
+
+    getBackColor(): any {
+        return { 'background-color': this.convertColor(this.backColor) };
+    }
 }
 
 function initCells(width, height){
